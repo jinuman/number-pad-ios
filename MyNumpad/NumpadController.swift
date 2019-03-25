@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NumpadController.swift
 //  MyNumpad
 //
 //  Created by Jinwoo Kim on 25/03/2019.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NumpadController: UICollectionViewController {
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .purple
+        collectionView.backgroundColor = .purple
     }
 
 

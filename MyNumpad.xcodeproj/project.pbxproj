@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36251A782249023800220DAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36251A772249023800220DAD /* AppDelegate.swift */; };
-		36251A7A2249023800220DAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36251A792249023800220DAD /* ViewController.swift */; };
+		36251A7A2249023800220DAD /* NumpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36251A792249023800220DAD /* NumpadController.swift */; };
 		36251A7F2249023900220DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36251A7E2249023900220DAD /* Assets.xcassets */; };
 		36251A822249023900220DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36251A802249023900220DAD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		36251A742249023800220DAD /* MyNumpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNumpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36251A772249023800220DAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36251A792249023800220DAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		36251A792249023800220DAD /* NumpadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadController.swift; sourceTree = "<group>"; };
 		36251A7E2249023900220DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36251A812249023900220DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36251A832249023900220DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				36251A772249023800220DAD /* AppDelegate.swift */,
-				36251A792249023800220DAD /* ViewController.swift */,
+				36251A792249023800220DAD /* NumpadController.swift */,
 				36251A7E2249023900220DAD /* Assets.xcassets */,
 				36251A802249023900220DAD /* LaunchScreen.storyboard */,
 				36251A832249023900220DAD /* Info.plist */,
@@ -131,7 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36251A7A2249023800220DAD /* ViewController.swift in Sources */,
+				36251A7A2249023800220DAD /* NumpadController.swift in Sources */,
 				36251A782249023800220DAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

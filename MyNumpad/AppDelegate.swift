@@ -17,9 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow()
+        
+        let layout = UICollectionViewFlowLayout()
         if let window = window {
             window.backgroundColor = .white
-            window.rootViewController = ViewController()
+            window.rootViewController = NumpadController(collectionViewLayout: layout)
             window.makeKeyAndVisible()
         }
 
