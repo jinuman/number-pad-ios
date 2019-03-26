@@ -12,19 +12,24 @@ class NumpadCell: UICollectionViewCell {
     
     let digitsLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.title2)
+        label.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE
+            ? UIFont.systemFont(ofSize: 24)
+            : UIFont.systemFont(ofSize: 32)
         label.numberOfLines = 1
         label.textAlignment = .center
-        return label
-    }()
-    let lettersLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption2)
-        label.textAlignment = .center
-        label.numberOfLines = 1
         return label
     }()
     
+    let lettersLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE
+            ? UIFont.boldSystemFont(ofSize: 8)
+            : UIFont.boldSystemFont(ofSize: 10)
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(white: 0.9, alpha: 1)
