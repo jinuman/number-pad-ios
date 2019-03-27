@@ -10,6 +10,8 @@ import UIKit
 
 class NumpadCell: UICollectionViewCell {
     
+    fileprivate let defaultNumberColor = UIColor(white: 0.9, alpha: 1)
+    
     let digitsLabel: UILabel = {
         let label = UILabel()
         label.font = UIDevice.current.screenType == .iPhones_5_5s_5c_SE
@@ -30,9 +32,17 @@ class NumpadCell: UICollectionViewCell {
         return label
     }()
 
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? .darkGray : defaultNumberColor
+            digitsLabel.textColor = isHighlighted ? .white : .black
+            lettersLabel.textColor = isHighlighted ? .white : .black
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(white: 0.9, alpha: 1)
+        backgroundColor = defaultNumberColor
         
         let stackView = UIStackView(arrangedSubviews: [digitsLabel, lettersLabel])
         stackView.axis = .vertical
