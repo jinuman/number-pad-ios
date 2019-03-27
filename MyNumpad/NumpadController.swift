@@ -12,6 +12,7 @@ class NumpadController: UICollectionViewController {
     
     let headerId = "headerId"
     let cellId = "cellId"
+    var displayNumber = ""
     
     let numbers = [
         "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#"
@@ -41,16 +42,6 @@ class NumpadController: UICollectionViewController {
 
 // MARK:- Regarding collection view
 extension NumpadController: UICollectionViewDelegateFlowLayout {
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? NumpadHeader else {
-            fatalError("header is bad")
-        }
-        return header
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
-    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numbers.count
@@ -63,6 +54,24 @@ extension NumpadController: UICollectionViewDelegateFlowLayout {
         cell.digitsLabel.text = numbers[indexPath.item]
         cell.lettersLabel.text = letters[indexPath.item]
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? NumpadHeader else {
+            fatalError("header is bad")
+        }
+        header.numbersLabel.text = displayNumber
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let height = view.frame.height * 0.2
+        return CGSize(width: view.frame.width, height: height)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        displayNumber += numbers[indexPath.item]
+        collectionView.reloadData()     // force to call header numbersLabel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -85,15 +94,15 @@ extension NumpadController: UICollectionViewDelegateFlowLayout {
                             right: leftRightsectionPadding)
     }
     
-    // 행들 간 간격 return
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
-    }
-    
     // 행 안에 셀들 간 간격 return
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         let interSpacing = view.frame.width * 0.1
         return interSpacing
+    }
+    
+    // 행들 간 간격 return
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
 
