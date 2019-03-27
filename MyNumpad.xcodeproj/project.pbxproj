@@ -13,6 +13,7 @@
 		36251A822249023900220DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36251A802249023900220DAD /* LaunchScreen.storyboard */; };
 		36AAAF762249448B006936CF /* NumpadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAAF752249448B006936CF /* NumpadCell.swift */; };
 		36AAAF78224945DD006936CF /* UIKit+MyNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AAAF77224945DD006936CF /* UIKit+MyNumpad.swift */; };
+		36B51446224B213400F312B0 /* NumpadHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B51445224B213400F312B0 /* NumpadHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		36251A832249023900220DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36AAAF752249448B006936CF /* NumpadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadCell.swift; sourceTree = "<group>"; };
 		36AAAF77224945DD006936CF /* UIKit+MyNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+MyNumpad.swift"; sourceTree = "<group>"; };
+		36B51445224B213400F312B0 /* NumpadHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumpadHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				36251A772249023800220DAD /* AppDelegate.swift */,
-				36251A792249023800220DAD /* NumpadController.swift */,
+				36B51445224B213400F312B0 /* NumpadHeader.swift */,
 				36AAAF752249448B006936CF /* NumpadCell.swift */,
+				36251A792249023800220DAD /* NumpadController.swift */,
 				36AAAF77224945DD006936CF /* UIKit+MyNumpad.swift */,
 				36251A7E2249023900220DAD /* Assets.xcassets */,
 				36251A802249023900220DAD /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 				36251A7A2249023800220DAD /* NumpadController.swift in Sources */,
 				36251A782249023800220DAD /* AppDelegate.swift in Sources */,
 				36AAAF762249448B006936CF /* NumpadCell.swift in Sources */,
+				36B51446224B213400F312B0 /* NumpadHeader.swift in Sources */,
 				36AAAF78224945DD006936CF /* UIKit+MyNumpad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import UIKit
 
 class NumpadController: UICollectionViewController {
     
+    let headerId = "headerId"
     let cellId = "cellId"
     
     let numbers = [
@@ -23,7 +24,13 @@ class NumpadController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        collectionView.register(NumpadCell.self, forCellWithReuseIdentifier: cellId)
+        
+        collectionView.register(NumpadHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: headerId)
+        
+        collectionView.register(NumpadCell.self,
+                                forCellWithReuseIdentifier: cellId)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -34,13 +41,24 @@ class NumpadController: UICollectionViewController {
 
 // MARK:- Regarding collection view
 extension NumpadController: UICollectionViewDelegateFlowLayout {
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? NumpadHeader else {
+            fatalError("header is bad")
+        }
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 200)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numbers.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? NumpadCell else {
-            fatalError("NumpadCell is bad")
+            fatalError("cell is bad")
         }
         cell.digitsLabel.text = numbers[indexPath.item]
         cell.lettersLabel.text = letters[indexPath.item]
